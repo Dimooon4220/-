@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Активні Парки — Табло</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="scoreboard">
+
+        <!-- Верхня частина -->
+            <header class="top">
+
+                <div class="logo-left">
+                    <img src="images/ministry.png" alt="Міністерство молоді та спорту">
+                </div>
+
+                <div class="ams">
+                    <img src="images/ams.png" alt="АМС">
+                </div>
+
+                <div class="logo-right">
+                    <img src="images/active-parks.png" alt="Активні парки">
+                </div>
+
+            </header>
+
+
+<div class="timer" id="timer">
+    10:00
+</div>
+
+<div class="period" id="period">
+    1 ТАЙМ
+</div>
+
+<!-- Керування часом -->
+<div class="time-controls">
+
+    <div class="time-adjust">
+        <button onclick="adjustTime(-60)">−1:00</button>
+        <button onclick="adjustTime(-10)">−10с</button>
+
+        <button onclick="adjustTime(10)">+10с</button>
+        <button onclick="adjustTime(60)">+1:00</button>
+    </div>
+
+    <div class="time-main-controls">
+
+        <button class="start-btn" onclick="startTimer()">
+            Старт
+        </button>
+
+        <button onclick="pauseTimer()">
+            Пауза
+        </button>
+
+        <button onclick="resetTimer()">
+            Скинути час
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- ================================
+     КОМАНДИ
+================================ -->
+
+<main class="teams">
+
+    <!-- =========================
+         КОМАНДА 1
+    ========================== -->
+
+    <section class="team team-left">
+
+        <input
+            type="text"
+            id="team1Name"
+            value="Команда 1"
+            class="team-name team1-name"
+        >
+
+        <div class="score-area">
+
+            <div class="buttons">
+
+                <button onclick="changeScore(1, 1)">
+                    +
+                </button>
+
+                <button onclick="changeScore(1, -1)">
+                    −
+                </button>
+
+            </div>
+
+            <div
+                class="score"
+                id="score1"
+            >
+                0
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         ЦЕНТРАЛЬНИЙ ЛОГОТИП
+    ========================== -->
+
+    <div class="center-logo">
+
+        <img
+            src="images/aktyvni.png"
+            alt="Активні"
+        >
+
+    </div>
+
+
+    <!-- =========================
+         КОМАНДА 2
+    ========================== -->
+
+    <section class="team team-right">
+
+        <input
+            type="text"
+            id="team2Name"
+            value="Команда 2"
+            class="team-name team2-name"
+        >
+
+        <div class="score-area">
+
+            <div class="score" id="score2">
+                0
+            </div>
+
+            <div class="buttons">
+
+                <button onclick="changeScore(2, 1)">
+                    +
+                </button>
+
+                <button onclick="changeScore(2, -1)">
+                    −
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+        <!-- Керування -->
+            <div class="controls">
+
+                <button onclick="resetGame()">
+                    Скинути матч
+                </button>
+
+                <button onclick="nextPeriod()">
+                    Наступний тайм
+                </button>
+
+            </div>
+
+
+        <!-- Види спорту -->
+<div class="sports">
+
+    <button class="sport-btn" onclick="setSport('Флорбол', this)">
+        Флорбол
+    </button>
+
+    <button class="sport-btn" onclick="setSport('Футбол', this)">
+        Футбол
+    </button>
+
+    <button class="sport-btn" onclick="setSport('Доджбол', this)">
+        Доджбол
+    </button>
+
+    <button class="sport-btn" onclick="setSport('Регбі-5', this)">
+        Регбі-5
+    </button>
+
+</div>
+
+<div class="current-sport">
+    Вид спорту: <strong id="sport">Флорбол</strong>
+</div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
